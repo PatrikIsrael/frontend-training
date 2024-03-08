@@ -11,10 +11,6 @@ Este repositório é destinado a projetos fictícios de front-end, criados com o
 - **Projeto 1: Finance.com**
   - **Descrição:** Uma aplicação web simulando uma empresa fictícia de empréstimos.
   - [Link para o Projeto](https://github.com/PatrikIsrael/frontend-training/tree/main/Finance.com).
-  - [Preview da Página Inicial]![home](https://github.com/PatrikIsrael/frontend-training/assets/119878626/f2f95c01-8818-4b1d-9d80-57bc5a525606)
-  - [Preview da Página de Cadastro]![cadastro](https://github.com/PatrikIsrael/frontend-training/assets/119878626/7d0ebffe-e8e0-4af7-b433-5d736d2aa8f9)
-  - [Preview da Página de Simulação]![simulacao](https://github.com/PatrikIsrael/frontend-training/assets/119878626/2e898e30-5211-457b-b254-87abb63c33dc)
-
 
 ## Contato
 
