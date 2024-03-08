@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simulação de Empréstimo - Finance.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <img src="assets/img/Finance.com.png" alt="Logo da Finance.com">
+        </div>
+        <nav class="cabecalho__menu">
+            <a class="cabecalho_link" href="index.html">Home</a>
+            <a class="cabecalho_link" href="sign-up.html">Cadastro</a>
+            <a class="cabecalho_link" href="simulacao.html">Simulação</a>
+        </nav>
+    </header>
+
+    <div class="titulo">
+        <h1>Simule seu empréstimo</h1>
+        <h2>Finance.com</h2>
+    </div>
+
+    <div class="simulacao">
+        <h2>Simulação de Empréstimo</h2>
+        <form>
+            <label for="valorEmprestimo">Valor desejado:</label>
+            <input type="number" id="valorEmprestimo" name="valorEmprestimo" required>
+
+            <label for="numeroMeses">Número de parcelas:</label>
+            <input type="number" id="numeroMeses" name="numeroMeses" required>
+
+            <label for="opcaoEmprestimo">Tipo de Empréstimo:</label>
+            <select id="opcaoEmprestimo" name="opcaoEmprestimo">
+                <option value="Pessoal">Empréstimo Pessoal</option>
+                <option value="Consignado">Empréstimo Consignado</option>
+            </select>
+
+            <button type="button" onclick="simularEmprestimo()">Simular</button>
+        </form>
+
+    
+        <div id="resultado" class="resultado"></div>
+    </div>
+
+    <div class="rodape">
+        <footer>
+            <h2>Redes Sociais</h2>
+            <a href="https://www.facebook.com"><img src="assets/img/_facebook_logo_media_social_icon.png" alt="logo_Facebook"></a>
+            <a href="https://www.instagram.com"><img src="assets/img/instagram_brand_logo_social media_icon.png" alt="logo_Instagram"></a>
+            <a href="https://www.whatsapp.com"><img src="assets/img/logo_whatsapp_icon.png" alt="logo_Whats"></a>
+            <a href="https://www.twitter.com"><img src="assets/img/x_logo_twitter_new_brand_icon.png" alt="logo_X"></a>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

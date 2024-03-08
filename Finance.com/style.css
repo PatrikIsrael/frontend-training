@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap');
+
+/* Entender melhor esquema de cores */
+:root {
+    --cor-primaria: #009688;
+    --cor-secundaria: #03A9F4;
+    --cor-tercearia: #78A083;
+    --cor-texto: #212121;
+    --cor-fundo: #FAFAFA;
+    --font-primaria: 'Anton', sans-serif;
+    --font-secundaria: 'Roboto', sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--font-secundaria);
+    margin: 0;
+}
+
+.cabecalho {
+    background-color: var(--cor-primaria);
+    padding: 15px;
+    text-align: center;
+}
+
+.cabecalho a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+.cabecalho a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Titulo de todas as páginas */
+.titulo {
+    padding: 20px;
+    text-align: center;
+}
+
+.sobre_pagina {
+    padding: 20px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.modelo_emprestimo {
+    text-align: center;
+    padding: 20px;
+}
+
+.modelo_emprestimo h2 {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+.modelo_emprestimo h3, .modelo_emprestimo h4 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.modelo_emprestimo p {
+    margin-bottom: 15px;
+}
+
+.rodape {
+    text-align: center;
+    padding: 20px;
+}
+
+.rodape h2 {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+.rodape img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.rodape a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Botões personalizados */
+.button, button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Botão padrão */
+.button, button {
+    background-color: var(--cor-primaria);
+    color: #fff;
+}
+
+/* Hover - Efeito ao passar o mouse */
+.button:hover, button:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Estilo específico para a página de simulação */
+.simulacao .button {
+    background-color: var(--cor-secundaria);
+}
+
+.simulacao .button:hover {
+    background-color: var(--cor-tercearia);
+}
+
+/* Estilo específico para a página de cadastro */
+.cadastro .button {
+    background-color: var(--cor-tercearia);
+}
+
+.cadastro .button:hover {
+    background-color: var(--cor-secundaria);
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #009688;
+    color: #fff;
+    border-radius: 10px;
+}
+
+#resultado h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#resultado p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+#resultado p:first-child {
+    margin-top: 0;
+}
+
+.formulario {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+
+/* Estilo para o formulário de cadastro */
+.formulario {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* Estilo para os campos do formulário */
+.formulario .campo {
+    margin-bottom: 20px;
+}
+
+.formulario label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="password"],
+.formulario input[type="tel"],
+.formulario input[type="number"],
+.formulario select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Estilo para o botão de cadastrar */
+.formulario button {
+    background-color: #009688;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #00796b;
+}
+
+/* Estilo para a mensagem de cadastro */
+#mensagemCadastro {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #009688;
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Estilo para a seção de simulação */
+.simulacao {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* Estilo para o título da seção de simulação */
+.simulacao h2 {
+    font-size: 24px;
+    color: #009688;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os campos do formulário de simulação */
+.simulacao label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.simulacao input[type="number"],
+.simulacao select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o botão de simular */
+.simulacao button {
+    background-color: #009688;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.simulacao button:hover {
+    background-color: #00796b;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px; 
+    height: auto; 
+    border-radius: 50%; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; 
+}
+
+.logo img:hover {
+    transform: scale(1.1); 
+}
+
