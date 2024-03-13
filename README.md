@@ -12,6 +12,10 @@ Este repositório é destinado a projetos fictícios de front-end, criados com o
   - **Descrição:** Uma aplicação web simulando uma empresa fictícia de empréstimos.
   - [Link para o Projeto](https://github.com/PatrikIsrael/frontend-training/tree/main/Finance.com).
 
+- **Projeto 2: PagEase**
+  - **Descrição:** Uma aplicação web simulando uma empresa fictícia de pagamento.
+  - [Link para o Projeto]().
+
 ## Contato
 
 **Nome:** Patrik Israel  
