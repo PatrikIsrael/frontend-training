@@ -19,8 +19,9 @@
    - O painel calcula automaticamente os valores de parcelamento, aplicando juros de 5% para 4 parcelas e 10% para 5 parcelas. O valor total é atualizado ao selecionar o número de parcelas.
    ![cartao](credito.png)
 
-3. **Mensagem de Sucesso (`sucesso.html`):**
+4. **Mensagem de Sucesso (`sucesso.html`):**
    - Ao clicar no botão "Pagar," é exibida uma mensagem de sucesso.
+     
 ![pagamento](pagamento.png)
 
 ### Como Contribuir
