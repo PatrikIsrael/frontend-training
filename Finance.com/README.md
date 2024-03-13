@@ -7,13 +7,13 @@ Bem-vindo ao repositório **Finance.com**, um projeto de estudo front-end destin
 O projeto inclui as seguintes seções:
 
 1. **Página Inicial (`index.html`):** Uma página de boas-vindas apresentando a Finance.com e oferecendo navegação para as páginas de cadastro e simulação de empréstimo.
-
+![](home.png)
 
 2. **Página de Cadastro (`sign-up.html`):** Um formulário de cadastro de cliente com campos como nome, e-mail, senha, telefone, endereço, cidade, estado e CEP.
-
+![](pagina_cadastro.png)
 
 3. **Página de Simulação de Empréstimo (`simulacao.html`):** Uma página interativa que permite aos usuários simular empréstimos, escolhendo valores desejados, número de parcelas e tipo de empréstimo (pessoal ou consignado). Os resultados da simulação são exibidos na página.
-
+![](pagina_simulacao.png)
 
 ## Como Contribuir
 
