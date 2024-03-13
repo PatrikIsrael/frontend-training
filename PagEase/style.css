@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --cor-primaria: #009688;
+    --cor-secundaria: #03A9F4;
+    --cor-tercearia: #78A083;
+    --cor-texto: #212121;
+    --cor-fundo: #FAFAFA;
+    --font-primaria: 'Anton', sans-serif;
+    --font-secundaria: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--font-secundaria);
+    margin: 0;
+}
+
+.cabecalho {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover {
+    background-color: var(--cor-secundaria);
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.rodape {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#resumoPagamento {
+    margin-top: 20px;
+    display: none;
+}
+
+h2 {
+    font-family: var(--font-primaria);
+    color: var(--cor-secundaria);
+    margin-bottom: 15px;
+}
+
+#detalhesPagamento {
+    white-space: pre-line;
+}
+
+#efetuarPagamentoButton {
+    display: none;
+}

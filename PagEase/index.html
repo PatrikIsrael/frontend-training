@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pagamento.PagEase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1>PagEase</h1>
+        <p>Sua Plataforma de Pagamento Fácil</p>
+    </header>
+
+    <main>
+        <form id="formularioPagamento">
+            <label for="metodoPagamento">Método de Pagamento</label>
+            <select id="metodoPagamento" name="metodoPagamento" onchange="togglePaymentMethod()">
+                <option value="pix">Pix</option>
+                <option value="cartao">Cartão de Crédito</option>
+            </select>
+
+            <div id="pixPanel" style="display: none;">
+                <label for="formaPix">Forma de Pagamento Pix</label>
+                <select id="formaPix" name="formaPix" onchange="togglePixOptions()">
+                    <option value="cpf">Pix por CPF</option>
+                    <option value="qrCode">Pix por QR Code</option>
+                </select>
+
+                <div id="cpfPanel" style="display: none;">
+                    <label for="cpf">Copie e cole o CPF abaixo:</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="123.456.789-00" value="123.456.789-00" readonly>
+                </div>
+
+                <div id="qrCodePanel" style="display: none;">
+                    <label>QR Code Pix</label>
+                    <img id="qrCodePix" alt="QR Code Pix" src="assets/img/QR.png" />
+                </div>
+            </div>
+
+            <div id="cartaoPanel" style="display: none;">
+                <label for="numeroCartao">Número do Cartão</label>
+                <input type="text" id="numeroCartao" name="numeroCartao" placeholder="XXXX-XXXX-XXXX-XXXX" oninput="checkCardNumber()">
+                    <div id="bandeiraIcons"></div>
+
+                <label for="nomeTitular">Nome do Titular</label>
+                <input type="text" id="nomeTitular" name="nomeTitular" placeholder="Nome do Titular" required>
+
+                <label for="codigoSeguranca">Código de Segurança</label>
+                <input type="text" id="codigoSeguranca" name="codigoSeguranca" placeholder="CVV" required>
+
+                <label for="vencimento">Data Vencimento do Cartão</label>
+                <input type="text" id="vencimento" name="vencimento" placeholder="MM/AA" required>
+
+                <label for="parcelas">Parcelas</label>
+                <select id="parcelas" name="parcelas">
+                    <option value="1">1x</option>
+                    <option value="2">2x</option>
+                    <option value="3">3x</option>
+                    <option value="4">4x</option>
+                    <option value="5">5x</option>
+                </select>
+            </div>
+
+            <label for="valor">Valor da Transação</label>
+            <input type="number" id="valor" name="valor" placeholder="Digite o valor da transação" required>
+
+            <div id="mensagemAlerta" style="color: red; margin-top: 5px;"></div>
+
+            <div id="resumoPagamento" style="display: none;">
+                <h2>Resumo do Pagamento</h2>
+                <p id="detalhesPagamento"></p>
+                <button type="button" id="efetuarPagamentoButton" onclick="confirmPayment()">Efetuar Pagamento</button>
+            </div>
+
+            <button type="button" id="informarDadosButton" onclick="generatePayment()">Gerar Pagamento</button>
+        </form>
+    </main>
+
+    <footer>
+        &copy; 2024 PagEase - Todos os direitos reservados
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
