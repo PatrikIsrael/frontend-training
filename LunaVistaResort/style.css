@@ -1,0 +1,68 @@
+/* Estilos para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f8ff; /* Azul claro */
+}
+
+/* Estilos para o cabeçalho */
+.jumbotron {
+    background-color: #87ceeb; /* Azul claro */
+    padding: 50px 20px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centralizar texto */
+}
+
+.jumbotron h1,
+.jumbotron p {
+    color: #fff; /* Texto branco */
+    font-family: 'Pacifico', cursive; /* Fonte elegante */
+}
+
+/* Estilos para os ícones de redes sociais */
+.social-icons img {
+    width: 50px; /* Tamanho dos ícones */
+    margin-right: 10px; /* Espaçamento entre ícones */
+}
+
+/* Estilos para a seção de contato */
+.contact-info {
+    text-align: right; /* Alinhar texto à direita */
+}
+
+.contact-info p {
+    margin-bottom: 10px; /* Espaçamento inferior entre parágrafos */
+}
+
+/* Estilos para o formulário de reserva */
+.reservation-form {
+    max-width: 400px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centralizar o formulário na página */
+}
+
+.reservation-form input,
+.reservation-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.reservation-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #87ceeb; /* Azul claro */
+    border: none;
+    border-radius: 5px;
+    color: #fff; /* Texto branco */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilos adicionais */
+.container {
+    margin-bottom: 50px; /* Espaçamento inferior da seção */
+}
