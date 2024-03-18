@@ -14,7 +14,7 @@ Este repositório é destinado a projetos fictícios de front-end, criados com o
 
 - **Projeto 2: PagEase**
   - **Descrição:** Uma aplicação web simulando uma empresa fictícia de pagamento.
-  - [Link para o Projeto]().
+  - [Link para o Projeto](https://github.com/PatrikIsrael/frontend-training/tree/main/PagEase).
 
 ## Contato
 
