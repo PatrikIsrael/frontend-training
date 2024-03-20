@@ -1,0 +1,18 @@
+{
+    "reservas": [
+
+{  
+        "id":"",
+        "nome":"",
+        "email":"", 
+        "dateEntrada":"",
+        "dateSaida":"",
+        "adultos":"",
+        "criancas":"",
+        "pet":""
+        
+       }   
+
+    ]
+    
+}

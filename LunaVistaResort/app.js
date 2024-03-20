@@ -33,3 +33,35 @@ document.getElementById('reservaForm').addEventListener('submit', function(event
         alert('Por favor, preencha todos os campos do formulário.');
     }
 });
+
+/* Implementação jSon*/
+document.getElementById('reservaForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+
+    var formData = new FormData(this); // Captura os dados do formulário
+
+    // Converte os dados do formulário para um objeto JSON
+    var reserva = {};
+    formData.forEach(function(value, key) {
+        reserva[key] = value;
+    });
+
+    // Envia os dados para o JSON Server usando fetch API
+    fetch('http://localhost:3000/reservas', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reserva)
+    })
+    .then(function(response) {
+        if (response.ok) {
+            console.log('Reserva enviada com sucesso!');
+        } else {
+            console.error('Erro ao enviar reserva');
+        }
+    })
+    .catch(function(error) {
+        console.error('Erro ao enviar reserva:', error);
+    });
+});

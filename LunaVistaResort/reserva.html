@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+</head>
+<body>
+
+<h1>Reservas</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Data de Entrada</th>
+            <th>Data de Saída</th>
+            <th>Adultos</th>
+            <th>Crianças</th>
+            <th>Pets</th>
+        </tr>
+    </thead>
+    <tbody id="tabelaReservas">
+        <!-- As reservas serão preenchidas aqui -->
+    </tbody>
+</table>
+
+<script>
+// Função para carregar as reservas ao carregar a página
+window.onload = function() {
+    fetch('http://localhost:3000/reservas')
+    .then(response => response.json())
+    .then(data => {
+        var tabelaReservas = document.getElementById('tabelaReservas');
+
+        data.forEach(reserva => {
+            var row = tabelaReservas.insertRow();
+            row.insertCell(0).innerHTML = reserva.nome;
+            row.insertCell(1).innerHTML = reserva.email;
+            row.insertCell(2).innerHTML = reserva.date;
+            row.insertCell(3).innerHTML = reserva.date;
+            row.insertCell(4).innerHTML = reserva.adulto;
+            row.insertCell(5).innerHTML = reserva.criancas;
+            row.insertCell(6).innerHTML = reserva.pet;
+        });
+    })
+    .catch(error => {
+        console.error('Erro ao carregar reservas:', error);
+    });
+};
+</script>
+
+</body>
+</html>
