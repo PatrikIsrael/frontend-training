@@ -13,11 +13,12 @@
 ![Página Inicial](https://github.com/PatrikIsrael/frontend-training/assets/119878626/2c885b98-8814-44ba-9159-5f15f44b2d4d).
 
 
-2. **Página de Recuperação de Dados (`data-recovery.html`):**
+2. **Página de Recuperação de Dados (`reserva.html`):**
    - Permite aos usuários recuperar dados inserindo seu e-mail.
    - Após o envio do e-mail, uma mensagem de confirmação é exibida, indicando que as instruções foram enviadas com sucesso.
 
-![Página de Recuperação de Dados](data-recovery.png)
+![Página de Recuperação de Dados](https://github.com/PatrikIsrael/frontend-training/assets/119878626/8ee256df-878a-49fa-89a0-409102977793)
+
 
 ### Como Contribuir
 
