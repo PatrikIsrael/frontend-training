@@ -19,7 +19,6 @@
       "criancas": "",
       "pet": ""
     },
-
     {
       "id": "e2fc",
       "nome": "teste",
@@ -61,6 +60,24 @@
       "nome": "teste4",
       "email": "teste123@123",
       "date": "2024-03-24",
+      "adulto": "1",
+      "criancas": "1",
+      "pet": "1"
+    },
+    {
+      "id": "390c",
+      "nome": "teste2",
+      "email": "teste2@email.com",
+      "date": "2024-03-30",
+      "adulto": "2",
+      "criancas": "0",
+      "pet": "2"
+    },
+    {
+      "id": "0c76",
+      "nome": "teste3",
+      "email": "teste3@email.com",
+      "date": "2024-04-03",
       "adulto": "1",
       "criancas": "1",
       "pet": "1"
