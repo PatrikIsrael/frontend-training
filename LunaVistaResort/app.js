@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Função para ampliar a imagem quando clicada
 function ampliarImagem(imagem) {
-    // Cria um modal para exibir a imagem ampliada
+   
     const modal = document.createElement('div');
     modal.classList.add('modal');
     modal.innerHTML = `
