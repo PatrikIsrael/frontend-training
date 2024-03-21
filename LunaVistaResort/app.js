@@ -1,5 +1,8 @@
-document.getElementById('reservaForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
+document.addEventListener('DOMContentLoaded', function() {
+    
+    document.getElementById('reservaForm').addEventListener('submit', function(event) {
+       
+    });
 
     const formData = new FormData(this); // Captura os dados do formulário
 
@@ -56,13 +59,13 @@ function preencherTabelaReservas(reservas) {
     reservas.forEach(reserva => {
         const newRow = tabelaReservas.insertRow();
         newRow.innerHTML = `
-            <td>${reserva.nome}</td>
-            <td>${reserva.email}</td>
-            <td>${reserva.dataEntrada}</td>
-            <td>${reserva.dataSaida}</td>
-            <td>${reserva.adultos}</td>
-            <td>${reserva.criancas}</td>
-            <td>${reserva.pets}</td>
+            <td>${reserva.nome || 0}</td>
+            <td>${reserva.email || 0}</td>
+            <td>${reserva.dataEntrada || 0}</td>
+            <td>${reserva.dataSaida || 0}</td>
+            <td>${reserva.adultos || 0}</td>
+            <td>${reserva.criancas || 0}</td>
+            <td>${reserva.pets || 0}</td>
         `;
     });
 }
