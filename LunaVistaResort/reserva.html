@@ -3,53 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas</title>
+    <title>Reservas - Luna Vista Resort</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-<h1>Reservas</h1>
+<header class="jumbotron text-center">
+    <div class="container">
+        <h1 class="display-4">Reservas - Luna Vista Resort</h1>
+        <p class="lead">Confira sua reserva</p>
+    </div>
+</header>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Data de Entrada</th>
-            <th>Data de Saída</th>
-            <th>Adultos</th>
-            <th>Crianças</th>
-            <th>Pets</th>
-        </tr>
-    </thead>
-    <tbody id="tabelaReservas">
-        <!-- As reservas serão preenchidas aqui -->
-    </tbody>
-</table>
+<!-- Botão "Home" -->
+<button id="homeButton" onclick="window.location.href='index.html'" class="btn btn-primary home-btn">
+    <i class="fas fa-home"></i> Home
+</button>
 
-<script>
-// Função para carregar as reservas ao carregar a página
-window.onload = function() {
-    fetch('http://localhost:3000/reservas')
-    .then(response => response.json())
-    .then(data => {
-        var tabelaReservas = document.getElementById('tabelaReservas');
+<main class="container">
+    <section class="row mt-5 justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4">Reservas Efetuadas</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Data de Entrada</th>
+                        <th>Data de Saída</th>
+                        <th>Adultos</th>
+                        <th>Crianças</th>
+                        <th>Pets</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaReservas">
 
-        data.forEach(reserva => {
-            var row = tabelaReservas.insertRow();
-            row.insertCell(0).innerHTML = reserva.nome;
-            row.insertCell(1).innerHTML = reserva.email;
-            row.insertCell(2).innerHTML = reserva.date;
-            row.insertCell(3).innerHTML = reserva.date;
-            row.insertCell(4).innerHTML = reserva.adulto;
-            row.insertCell(5).innerHTML = reserva.criancas;
-            row.insertCell(6).innerHTML = reserva.pet;
-        });
-    })
-    .catch(error => {
-        console.error('Erro ao carregar reservas:', error);
-    });
-};
-</script>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 
 </body>
 </html>

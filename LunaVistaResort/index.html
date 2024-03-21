@@ -101,91 +101,108 @@
         </div>
     </section>
 
+      
+
     <section class="row mt-5">
-        <div class="col-md-6">  
-            <h2>Confira nossas suítes</h2>
-            <p>Conheça nossas acomodações luxuosas, projetadas para oferecer o máximo de conforto e estilo durante sua estadia.</p>
+        <div class="col-md-6 offset-md-3">  
+            <h2 class="text-center mb-4">Confira nossas suítes</h2>
+            <p class="text-center">Conheça nossas acomodações luxuosas, projetadas para oferecer o máximo de conforto e estilo durante sua estadia.</p>
             <div class="row">
-                <div class="col-md-4 mt-3">
-                    <h3>Suíte Solteiro</h3>
-                    <img src="img/suits_solteiro.jpeg" class="img-fluid" alt="Suíte Solteiro">
+                <div class="col-md-4">
+                    <div class="suite-card text-center">
+                        <h3>Suíte Solteiro</h3>
+                        <img src="img/suits_solteiro.jpeg" class="img-fluid suite-image" alt="Suíte Solteiro" onclick="ampliarImagem(this)">
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h3>Suíte Casal</h3>
-                    <img src="img/suite_casal.jpeg" class="img-fluid" alt="Suíte Casal">
+                    <div class="suite-card text-center">
+                        <h3>Suíte Casal</h3>
+                        <img src="img/suite_casal.jpeg" class="img-fluid suite-image" alt="Suíte Casal" onclick="ampliarImagem(this)">
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h3>Suíte Master</h3>
-                    <img src="img/suite_master.png" class="img-fluid" alt="Suíte Master">
+                    <div class="suite-card text-center">
+                        <h3>Suíte Master</h3>
+                        <img src="img/suite_master.png" class="img-fluid suite-image" alt="Suíte Master" onclick="ampliarImagem(this)">
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-6">
-            <h2>Faça sua reserva</h2>
-            <p>Entre em contato conosco informando as datas desejadas. Retornaremos informando a disponibilidade e repassando detalhes.</p>
-            <form id="reservaForm">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail">
-                </div>
-                <div class="form-group">
-                    <input type="date" class="form-control" name="date" id="date-entrada" placeholder="Data de entrada">
-                </div>
-                <div class="form-group">
-                    <input type="date" class="form-control" name="date" id="date-saida" placeholder="Data de saída">
-                </div>
-                <div class="form-group">
-                    <input type="number" class="form-control" name="adulto" id="adulto" placeholder="Número de adultos">
-                </div>
-                <div class="form-group">
-                    <input type="number" class="form-control" name="criancas" id="criancas" placeholder="Número de crianças">
-                </div>
-                <div class="form-group">
-                    <input type="number" class="form-control" name="pet" id="pet" placeholder="Quantidade de pets">
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar Reserva</button>
-            </form>
-        </div>
     </section>
-    <div class="col-md-6">
-        <a href="reservas.html">Ver reservas</a>
-        <button onclick="window.location.href='reservas.html'">Ver reservas</button>
-    </div>
+    
     
 
+        <section class="row mt-5">
+            <div class="col-md-6">
+                <h2>Faça sua reserva</h2>
+                <p>Entre em contato conosco informando as datas desejadas. Retornaremos informando a disponibilidade e repassando detalhes.</p>
+                <form id="reservaForm">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date-entrada">Data de Entrada:</label>
+                        <input type="date" class="form-control" name="date" id="date-entrada" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date-saida">Data de Saída:</label>
+                        <input type="date" class="form-control" name="date" id="date-saida" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adulto">Número de Adultos:</label>
+                        <input type="number" class="form-control" name="adulto" id="adulto" placeholder="Número de adultos" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="criancas">Número de Crianças:</label>
+                        <input type="number" class="form-control" name="criancas" id="criancas" placeholder="Número de crianças" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet">Quantidade de Pets:</label>
+                        <input type="number" class="form-control" name="pet" id="pet" placeholder="Quantidade de pets">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Reserva</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-    <section class="row mt-3">
-        <div class="col-md-6">
-            <h2>Redes Sociais</h2>
-            <a href="https://www.facebook.com/" target="_blank">
-                <img src="img/_facebook_logo_media_social_icon.png" alt="logoFacebook">
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-                <img src="img/instagram_brand_logo_social media_icon.png" alt="logoInstagram">
-            </a>
-            <a href="https://twitter.com/?lang=pt-br" target="_blank">
-                <img src="img/x_logo_twitter_new_brand_icon.png" alt="logoTwitter">
-            </a>
-            <a href="https://web.whatsapp.com/" target="_blank">
-                <img src="img/logo_whatsapp_icon.png" alt="logoWhatsapp">
-            </a>
-        </div>
-
-        <div class="col-md-6">
-            <h2>Contato</h2>
-            <p>Telefone: (12) 3456-7890</p>
-            <p>Email: info@lunaresorto.com</p>
-        </div>
-    </section>
-</main>
-
+    <!-- Botão para ver reservas -->
+<div class="col-md-7 fixed-top" style="right: 10px; top: 10px;">
+    <button onclick="window.location.href='reserva.html'" class="btn btn-primary">Ver Reservas</button>
+</div>
+    
+<footer class="container mt-5">
+                    <h2>Contato</h2>
+                    <p>Telefone: (12) 3456-7890</p>
+                    <p>Email: info@lunaresorto.com</p>
+            
+                    <h2>Redes Sociais</h2>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <img src="img/_facebook_logo_media_social_icon.png" alt="logoFacebook">
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="img/instagram_brand_logo_social media_icon.png" alt="logoInstagram">
+                        </a>
+                        <a href="https://twitter.com/?lang=pt-br" target="_blank">
+                            <img src="img/x_logo_twitter_new_brand_icon.png" alt="logoTwitter">
+                        </a>
+                        <a href="https://web.whatsapp.com/" target="_blank">
+                            <img src="img/logo_whatsapp_icon.png" alt="logoWhatsapp">
+                        </a>
+                    </div>
+                </div>
+            </div>
+</footer>
+    
 <script src="app.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

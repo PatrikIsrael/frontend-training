@@ -1,52 +1,15 @@
 document.getElementById('reservaForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio do formulário
+    event.preventDefault(); // Impede o envio padrão do formulário
 
-    // Coleta dos dados do formulário
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const dataEntrada = document.getElementById('date-entrada').value;
-    const dataSaida = document.getElementById('date-saida').value;
-    const adultos = document.getElementById('adulto').value;
-    const criancas = document.getElementById('criancas').value;
-    const pets = document.getElementById('pet').value;
-
-    // Verifica se todos os campos foram preenchidos
-    if (nome && email && dataEntrada && dataSaida && adultos && criancas && pets) {
-        // Registro da reserva no console
-        console.log('Reserva enviada para avaliação:');
-        console.log('Nome:', nome);
-        console.log('E-mail:', email);
-        console.log('Data de Entrada:', dataEntrada);
-        console.log('Data de Saída:', dataSaida);
-        console.log('Número de Adultos:', adultos);
-        console.log('Número de Crianças:', criancas);
-        console.log('Quantidade de Pets:', pets);
-
-        // Exibe mensagem de confirmação
-        alert('Reserva enviada com sucesso!');
-        // Recarrega a página após 2 segundos (2000 milissegundos)
-        setTimeout(function() {
-            window.location.reload();
-        }, 1000);
-    } else {
-        // Se algum campo estiver vazio, exibe mensagem de erro
-        alert('Por favor, preencha todos os campos do formulário.');
-    }
-});
-
-/* Implementação jSon*/
-document.getElementById('reservaForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede o comportamento padrão de envio do formulário
-
-    var formData = new FormData(this); // Captura os dados do formulário
+    const formData = new FormData(this); // Captura os dados do formulário
 
     // Converte os dados do formulário para um objeto JSON
-    var reserva = {};
+    const reserva = {};
     formData.forEach(function(value, key) {
         reserva[key] = value;
     });
 
-    // Envia os dados para o JSON Server usando fetch API
+    // Envia os dados para o servidor usando fetch API
     fetch('http://localhost:3000/reservas', {
         method: 'POST',
         headers: {
@@ -57,6 +20,8 @@ document.getElementById('reservaForm').addEventListener('submit', function(event
     .then(function(response) {
         if (response.ok) {
             console.log('Reserva enviada com sucesso!');
+            // Após o envio bem-sucedido, chama a função para buscar e exibir todas as reservas
+            carregarReservas();
         } else {
             console.error('Erro ao enviar reserva');
         }
@@ -65,3 +30,64 @@ document.getElementById('reservaForm').addEventListener('submit', function(event
         console.error('Erro ao enviar reserva:', error);
     });
 });
+
+// Função para carregar as reservas e preencher a tabela
+function carregarReservas() {
+    fetch('http://localhost:3000/reservas')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao carregar as reservas');
+            }
+            return response.json();
+        })
+        .then(reservas => {
+            preencherTabelaReservas(reservas);
+        })
+        .catch(error => {
+            console.error('Erro ao carregar as reservas:', error);
+        });
+}
+
+// Função para preencher a tabela com os dados das reservas
+function preencherTabelaReservas(reservas) {
+    const tabelaReservas = document.getElementById('tabelaReservas');
+    tabelaReservas.innerHTML = ''; // Limpa o conteúdo atual da tabela
+
+    reservas.forEach(reserva => {
+        const newRow = tabelaReservas.insertRow();
+        newRow.innerHTML = `
+            <td>${reserva.nome}</td>
+            <td>${reserva.email}</td>
+            <td>${reserva.dataEntrada}</td>
+            <td>${reserva.dataSaida}</td>
+            <td>${reserva.adultos}</td>
+            <td>${reserva.criancas}</td>
+            <td>${reserva.pets}</td>
+        `;
+    });
+}
+
+// Chama a função para carregar as reservas quando a página carregar
+window.onload = () => {
+    carregarReservas();
+};
+
+  // Função para ampliar a imagem quando clicada
+  function ampliarImagem(imagem) {
+    // Cria um modal para exibir a imagem ampliada
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+        <div class="modal-overlay" onclick="fecharModal()"></div>
+        <img src="${imagem.src}" class="modal-img">
+    `;
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden'; // Impede o scroll da página enquanto o modal estiver aberto
+}
+
+// Função para fechar o modal
+function fecharModal() {
+    const modal = document.querySelector('.modal');
+    modal.remove();
+    document.body.style.overflow = ''; // Permite o scroll da página novamente
+}
