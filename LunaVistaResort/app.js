@@ -1,74 +1,94 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    document.getElementById('reservaForm').addEventListener('submit', function(event) {
-       
-    });
+    // Adiciona um listener de evento de envio para o formulário de reserva
+    const reservaForm = document.getElementById('reservaForm');
+    if (reservaForm) {
+        reservaForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const formData = new FormData(this); // Captura os dados do formulário
+            const reserva = {};
+            formData.forEach(function(value, key) {
+                reserva[key] = value;
+            });
+            fetch('http://localhost:3000/reservas', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(reserva)
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    console.log('Reserva enviada com sucesso!');
+                    carregarReservas(); // Carrega as reservas após o envio bem-sucedido
+                } else {
+                    console.error('Erro ao enviar reserva');
+                }
+            })
+            .catch(function(error) {
+                console.error('Erro ao enviar reserva:', error);
+            });
+        });
+    }
 
-    const formData = new FormData(this); // Captura os dados do formulário
+    // Adiciona um listener de evento de entrada para o campo de busca
+    const campoBusca = document.getElementById('campoBusca');
+    if (campoBusca) {
+        campoBusca.addEventListener('input', function() {
+            document.getElementById('botaoBuscar').disabled = this.value.trim() === '';
+        });
+    }
 
-    // Converte os dados do formulário para um objeto JSON
-    const reserva = {};
-    formData.forEach(function(value, key) {
-        reserva[key] = value;
-    });
+    // Adiciona um listener para o botão de busca
+    const botaoBuscar = document.getElementById('botaoBuscar');
+    if (botaoBuscar) {
+        botaoBuscar.addEventListener('click', function() {
+            buscarReservas(); // Executa a função de busca quando o botão for clicado
+        });
+    }
 
-    // Envia os dados para o servidor usando fetch API
-    fetch('http://localhost:3000/reservas', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(reserva)
-    })
-    .then(function(response) {
-        if (response.ok) {
-            console.log('Reserva enviada com sucesso!');
-            // Após o envio bem-sucedido, chama a função para buscar e exibir todas as reservas
-            carregarReservas();
-        } else {
-            console.error('Erro ao enviar reserva');
-        }
-    })
-    .catch(function(error) {
-        console.error('Erro ao enviar reserva:', error);
-    });
+    // Função para buscar as reservas com base no nome ou email
+    function buscarReservas() {
+        const termoBusca = document.getElementById('campoBusca').value.trim().toLowerCase();
+        fetch('http://localhost:3000/reservas')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar as reservas');
+                }
+                return response.json();
+            })
+            .then(reservas => {
+                // Filtra as reservas com base no termo de busca
+                const reservasFiltradas = reservas.filter(reserva => 
+                    reserva.nome.toLowerCase().includes(termoBusca) ||
+                    reserva.email.toLowerCase().includes(termoBusca)
+                );
+                preencherTabelaReservas(reservasFiltradas); // Preenche a tabela com as reservas filtradas
+            })
+            .catch(error => {
+                console.error('Erro ao carregar as reservas:', error);
+            });
+    }
+
+    // Função para preencher a tabela com os dados das reservas
+    function preencherTabelaReservas(reservas) {
+        const tabelaReservas = document.getElementById('tabelaReservas');
+        tabelaReservas.innerHTML = ''; // Limpa o conteúdo atual da tabela
+        reservas.forEach(reserva => {
+            const newRow = tabelaReservas.insertRow();
+            newRow.innerHTML = `
+                <td>${reserva.nome || 0}</td>
+                <td>${reserva.email || 0}</td>
+                <td>${reserva.dataEntrada || 0}</td>
+                <td>${reserva.dataSaida || 0}</td>
+                <td>${reserva.adulto || 0}</td>
+                <td>${reserva.criancas || 0}</td>
+                <td>${reserva.pet || 0}</td>
+            `;
+        });
+    }
 });
 
-// Função para carregar as reservas e preencher a tabela
-function carregarReservas() {
-    fetch('http://localhost:3000/reservas')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao carregar as reservas');
-            }
-            return response.json();
-        })
-        .then(reservas => {
-            preencherTabelaReservas(reservas);
-        })
-        .catch(error => {
-            console.error('Erro ao carregar as reservas:', error);
-        });
-}
 
-// Função para preencher a tabela com os dados das reservas
-function preencherTabelaReservas(reservas) {
-    const tabelaReservas = document.getElementById('tabelaReservas');
-    tabelaReservas.innerHTML = ''; // Limpa o conteúdo atual da tabela
-
-    reservas.forEach(reserva => {
-        const newRow = tabelaReservas.insertRow();
-        newRow.innerHTML = `
-            <td>${reserva.nome || 0}</td>
-            <td>${reserva.email || 0}</td>
-            <td>${reserva.dataEntrada || 0}</td>
-            <td>${reserva.dataSaida || 0}</td>
-            <td>${reserva.adultos || 0}</td>
-            <td>${reserva.criancas || 0}</td>
-            <td>${reserva.pets || 0}</td>
-        `;
-    });
-}
 
 // Função para ampliar a imagem quando clicada
 function ampliarImagem(imagem) {
@@ -90,7 +110,3 @@ function fecharModal() {
     document.body.style.overflow = '';
 }
 
-// Chama a função para carregar as reservas quando a página carregar
-window.onload = () => {
-    carregarReservas();
-};
