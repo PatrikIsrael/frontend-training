@@ -67,13 +67,8 @@ function preencherTabelaReservas(reservas) {
     });
 }
 
-// Chama a função para carregar as reservas quando a página carregar
-window.onload = () => {
-    carregarReservas();
-};
-
-  // Função para ampliar a imagem quando clicada
-  function ampliarImagem(imagem) {
+// Função para ampliar a imagem quando clicada
+function ampliarImagem(imagem) {
     // Cria um modal para exibir a imagem ampliada
     const modal = document.createElement('div');
     modal.classList.add('modal');
@@ -82,12 +77,17 @@ window.onload = () => {
         <img src="${imagem.src}" class="modal-img">
     `;
     document.body.appendChild(modal);
-    document.body.style.overflow = 'hidden'; // Impede o scroll da página enquanto o modal estiver aberto
+    document.body.style.overflow = 'hidden'; 
 }
 
 // Função para fechar o modal
 function fecharModal() {
     const modal = document.querySelector('.modal');
     modal.remove();
-    document.body.style.overflow = ''; // Permite o scroll da página novamente
+    document.body.style.overflow = '';
 }
+
+// Chama a função para carregar as reservas quando a página carregar
+window.onload = () => {
+    carregarReservas();
+};
