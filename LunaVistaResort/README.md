@@ -42,6 +42,13 @@ Sua contribuição é valiosa! Se encontrar bugs, tiver sugestões de melhorias 
 1. Clone este repositório:
 git clone https://github.com/seu-usuario/lunaresort.git
 
+2. Configure um servidor JSON utilizando o JSON Server. Primeiro, instale o JSON Server globalmente, caso ainda não o tenha feito:
+npm install -g json-server
+
+3. Após instalar o JSON Server, navegue até o diretório raiz do projeto lunaresort e execute o seguinte comando para iniciar o servidor:
+json-server --watch reservas.json --port 3000
+
+- Isso configurará um servidor JSON local na porta 3000, utilizando o arquivo reservas.json como fonte de dados
 
 2. Abra os arquivos HTML em seu navegador favorito para visualizar o site.
 
