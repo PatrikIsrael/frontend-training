@@ -9,15 +9,28 @@
 1. **Página Inicial (`index.html`):**
    - Apresenta uma página de boas-vindas destacando o Luna Vista Resort como um destino paradisíaco.
    - Oferece navegação para outras seções do site, como página de recuperação de dados.
+   - Permite que os usuários preencham um formulário de reserva, incluindo nome, e-mail, datas de entrada e saída, número de adultos, crianças e pets.
 
 ![Página Inicial](https://github.com/PatrikIsrael/frontend-training/assets/119878626/2c885b98-8814-44ba-9159-5f15f44b2d4d).
 
 
-2. **Página de Recuperação de Dados (`reserva.html`):**
-   - Permite aos usuários recuperar dados inserindo seu e-mail.
-   - Após o envio do e-mail, uma mensagem de confirmação é exibida, indicando que as instruções foram enviadas com sucesso.
+2. **Página de Reserva (`reserva.html`):**
+
+Ao enviar o formulário, os dados são enviados para um serviço simulado usando Fetch API.
+Inclui um botão para visualizar as reservas já efetuadas.
+
 
 ![Página de Recuperação de Dados](https://github.com/PatrikIsrael/frontend-training/assets/119878626/8ee256df-878a-49fa-89a0-409102977793)
+ 
+
+
+## Frameworks Utilizados
+Este projeto utiliza os seguintes frameworks atualizados:
+
+- **Bootstrap 4.5.2:** Utilizado para estilização e layout responsivo do site.
+- **Font Awesome 5:** Fornece ícones adicionais para aprimorar a interface do usuário.
+- **jQuery 3.5.1:** Facilita a manipulação do DOM e o gerenciamento de eventos no JavaScript.
+- **Google Fonts (Roboto e Pacifico):** Utilizado para importar fontes personalizadas para o site, adicionando estilo e elegância.
 
 
 ### Como Contribuir
