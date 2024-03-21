@@ -21,12 +21,18 @@
 
 <div class="col-md-7 fixed-top" style="right: 10px; top: 10px;">
     <button onclick="window.location.href='index.html'" class="btn btn-primary">Pagina inicial</button>
-</div>>
+</div>
 
 <main class="container">
     <section class="row mt-5 justify-content-center">
         <div class="col-md-8">
             <h2 class="text-center mb-4">Reservas Efetuadas</h2>
+            <div class="input-group mb-3">
+                <input id="campoBusca" type="text" class="form-control" placeholder="Buscar por nome ou email">
+                <div class="input-group-append">
+                    <button id="botaoBuscar" class="btn btn-primary" type="button">Buscar</button>
+                </div>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -54,3 +60,4 @@
 
 </body>
 </html>
+
